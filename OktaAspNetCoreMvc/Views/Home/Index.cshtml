@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Welcome to ACME inc</h1>
+<a href="@Url.Action("GetObjectFromBucketAsync", "Home")">
+    <button type="button" class="btn">Click me get stuff from aws s3 using hard-coded key+secret </button>
+</a>
+
+<a href="@Url.Action("ConnectToAWSViaCognitoCredsAsync", "Home")">
+    <button type="button" class="btn">Click me to get stuff from aws s3 via aws cognito identity pool </button>
+</a>
+
