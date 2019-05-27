@@ -47,7 +47,7 @@ namespace OktaAspNetCoreMvc.Controllers
             }
 
             //use hardcoded keys and secret
-            var client = new AmazonS3Client(new BasicAWSCredentials("AKIAZEXVW24V4DKFE3MS", "T0XtZznse/mwf3BLsJm02ilGQoVjnwaTVYGdMs8v"), RegionEndpoint.USEast1);
+            var client = new AmazonS3Client(new BasicAWSCredentials("****", "****"), RegionEndpoint.USEast1);
             return await this.ObjectFromBucket(client);
         }
 
@@ -86,7 +86,7 @@ namespace OktaAspNetCoreMvc.Controllers
                     WebIdentityToken = GetOktaTokenMiddleware.OktaToken,
                 };
 
-                var stsServiceClient = new AmazonSecurityTokenServiceClient(new BasicAWSCredentials("AKIAZEXVW24V4DKFE3MS", "T0XtZznse/mwf3BLsJm02ilGQoVjnwaTVYGdMs8v"), RegionEndpoint.USEast2);
+                var stsServiceClient = new AmazonSecurityTokenServiceClient(new BasicAWSCredentials("****", "*****"), RegionEndpoint.USEast2);
                 var response = await stsServiceClient.AssumeRoleWithWebIdentityAsync(assumeRoleRequest);
 
                 //var response = await stsServiceClient.ListRoles()
